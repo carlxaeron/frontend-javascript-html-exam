@@ -9,6 +9,7 @@ let onRandom = false;
 let stopRandom = false;
 let _USERS = onRandom ? shuffleArray(tempUSERS) : tempUSERS;
 
+// Iterate json data on table
 function iterateUsersToTable() {
     _USERS.map((v, k) => {
         var tr = document.createElement('tr');
@@ -28,7 +29,21 @@ function iterateUsersToTable() {
         })
     })
 }
+// start the iteration upon loaded the script
 iterateUsersToTable();
+
+// random/shuffle the users
+function randomUsersRow() {
+    onRandom = true;
+    _USERS = shuffleArray(tempUSERS);
+}
+
+// EVENTs
+startBtn.onclick = function() {
+    randomUsersRow();
+    tblTbody.innerHTML = '';
+    iterateUsersToTable();
+}
 
 function shuffleArray(array) {
     let currentIndex = array.length,
