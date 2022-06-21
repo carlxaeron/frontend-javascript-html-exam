@@ -49,7 +49,13 @@ function stopRandomUsersRow() {
 }
 // sort by name descending order
 function sortUsersByName() {
-
+    _USERS.sort((a, b) => {
+        if(a.name.last < b.name.last) return 1;
+        if(a.name.last > b.name.last) return -1;
+        return 0;
+    });
+    tblTbody.innerHTML = '';
+    iterateUsersToTable();
 }
 // check if random is ON
 function isRandomRunning() {
@@ -75,6 +81,8 @@ stopBtn.onclick = () => stopRandomUsersRow();
 sortBtn.onclick = () => {
     // we need to make to stop the shuffle here
     stopRandomUsersRow();
+
+    sortUsersByName();
 }
 
 // HELPERS
