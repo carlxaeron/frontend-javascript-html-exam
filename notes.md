@@ -1,1 +1,1 @@
-[comment]: # (Please write any notes / comments you have here.)
+Hi i am sorry been stuck in sorting the balance if balance are same then sort by ID. :) lack of time i guess :) Thank you - CARL LOUIS MANUEL
