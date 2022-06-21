@@ -1,1 +1,1 @@
-Hi i am sorry been stuck in sorting the balance if balance are same then sort by ID. :) lack of time i guess :) Thank you - CARL LOUIS MANUEL
+Hi i am sorry been stuck in sorting the balance if balance are same then sort by ID. :) lack of time i guess :) Thank you. Hope it can be consider for the role or any. - CARL LOUIS MANUEL
