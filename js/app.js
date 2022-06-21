@@ -51,8 +51,8 @@ function stopRandomUsersRow() {
 // sort by name descending order
 function sortUsersByName() {
     _USERS.sort((a, b) => {
-        if(a.accountBalance < b.accountBalance) return 1;
-        if(a.accountBalance > b.accountBalance) return -1;
+        if(a.accountBalance < b.accountBalance && a.id - b.id) return 1;
+        if(a.accountBalance > b.accountBalance && a.id - b.id) return -1;
         return 0;
     });
     tblTbody.innerHTML = '';
