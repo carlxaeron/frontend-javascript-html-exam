@@ -20,6 +20,11 @@ function iterateUsersToTable() {
                 if (v2 == 'name') {
                     tr.appendChild(td);
                     td.textContent = v[v2].title + ' ' + v[v2].last + ' ' + v[v2].first + (DEBUG ? ' ' + v['id'] : '');
+                } else if(v2 == 'pictureUrl') {
+                    var img = document.createElement('img');
+                    td.appendChild(img);
+                    img.src = v['pictureUrl'];
+                    tr.appendChild(td);
                 } else {
                     tr.appendChild(td);
                     td.textContent = v[v2];
