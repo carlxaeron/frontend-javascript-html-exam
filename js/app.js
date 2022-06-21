@@ -7,7 +7,7 @@ const sortBtn = document.getElementById("sort");
 let tempUSERS = USERS != undefined ? USERS : [];
 let onRandom = false;
 let _USERS = onRandom ? shuffleArray(tempUSERS) : tempUSERS;
-const DEBUG = true;
+const DEBUG = false;
 
 // Iterate json data on table
 function iterateUsersToTable() {
