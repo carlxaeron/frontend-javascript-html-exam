@@ -72,10 +72,15 @@ function isRandomRunning() {
 // EVENTs
 let onRandomTmr; 
 startBtn.onclick = () => {
-    onRandomTmr = setInterval(() => {
+    const _runRandom = () => {
         randomUsersRow();
         tblTbody.innerHTML = '';
         iterateUsersToTable();
+    }
+
+    _runRandom();
+    onRandomTmr = setInterval(() => {
+        _runRandom();
     }, 1000);
 }
 stopBtn.onclick = () => stopRandomUsersRow();
