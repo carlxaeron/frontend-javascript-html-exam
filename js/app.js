@@ -7,6 +7,7 @@ const sortBtn = document.getElementById("sort");
 let tempUSERS = USERS != undefined ? USERS : [];
 let onRandom = false;
 let _USERS = onRandom ? shuffleArray(tempUSERS) : tempUSERS;
+const DEBUG = true;
 
 // Iterate json data on table
 function iterateUsersToTable() {
@@ -18,7 +19,7 @@ function iterateUsersToTable() {
                 var td = document.createElement('td');
                 if (v2 == 'name') {
                     tr.appendChild(td);
-                    td.textContent = v[v2].title + ' ' + v[v2].last + ' ' + v[v2].first;
+                    td.textContent = v[v2].title + ' ' + v[v2].last + ' ' + v[v2].first + (DEBUG ? ' ' + v['id'] : '');
                 } else {
                     tr.appendChild(td);
                     td.textContent = v[v2];
@@ -50,8 +51,8 @@ function stopRandomUsersRow() {
 // sort by name descending order
 function sortUsersByName() {
     _USERS.sort((a, b) => {
-        if(a.name.last < b.name.last) return 1;
-        if(a.name.last > b.name.last) return -1;
+        if(a.accountBalance < b.accountBalance) return 1;
+        if(a.accountBalance > b.accountBalance) return -1;
         return 0;
     });
     tblTbody.innerHTML = '';
