@@ -1,1 +1,1 @@
-// Your code should go here
+console.log(USERS);
