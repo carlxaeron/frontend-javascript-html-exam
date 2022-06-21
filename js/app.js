@@ -1,5 +1,8 @@
 const table = document.getElementById("users-table");
 const tblTbody = table.getElementsByTagName('tbody')[0];
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
+const sortBtn = document.getElementById("sort");
 
 let tempUSERS = USERS != undefined ? USERS : [];
 let onRandom = false;
