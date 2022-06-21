@@ -39,10 +39,13 @@ function randomUsersRow() {
 }
 
 // EVENTs
+let onRandomTmr; 
 startBtn.onclick = function() {
-    randomUsersRow();
-    tblTbody.innerHTML = '';
-    iterateUsersToTable();
+    onRandomTmr = setInterval(() => {
+        randomUsersRow();
+        tblTbody.innerHTML = '';
+        iterateUsersToTable();
+    }, 1000);
 }
 
 function shuffleArray(array) {
