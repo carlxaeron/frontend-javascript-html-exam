@@ -6,7 +6,6 @@ const sortBtn = document.getElementById("sort");
 
 let tempUSERS = USERS != undefined ? USERS : [];
 let onRandom = false;
-let stopRandom = false;
 let _USERS = onRandom ? shuffleArray(tempUSERS) : tempUSERS;
 
 // Iterate json data on table
@@ -29,13 +28,38 @@ function iterateUsersToTable() {
         })
     })
 }
-// start the iteration upon loaded the script
+// START the iteration upon loaded the script
 iterateUsersToTable();
 
 // random/shuffle the users
 function randomUsersRow() {
     onRandom = true;
     _USERS = shuffleArray(tempUSERS);
+
+    // checker
+    isRandomRunning();
+}
+// stop the random/shuffle
+function stopRandomUsersRow() {
+    onRandom = false;
+    if(onRandomTmr) clearInterval(onRandomTmr);
+
+    // checker
+    isRandomRunning();
+}
+// sort by name descending order
+function sortUsersByName() {
+
+}
+// check if random is ON
+function isRandomRunning() {
+    if(onRandom) {
+        sortBtn.setAttribute('disabled', 'disabled');
+        sortBtn.classList.add('disabled');
+    } else {
+        sortBtn.removeAttribute('disabled');
+        sortBtn.classList.remove('disabled');
+    }
 }
 
 // EVENTs
@@ -47,8 +71,10 @@ startBtn.onclick = () => {
         iterateUsersToTable();
     }, 1000);
 }
-stopBtn.onclick = () => {
-    if(onRandomTmr) clearInterval(onRandomTmr);
+stopBtn.onclick = () => stopRandomUsersRow();
+sortBtn.onclick = () => {
+    // we need to make to stop the shuffle here
+    stopRandomUsersRow();
 }
 
 // HELPERS
