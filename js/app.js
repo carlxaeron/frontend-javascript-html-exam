@@ -40,14 +40,18 @@ function randomUsersRow() {
 
 // EVENTs
 let onRandomTmr; 
-startBtn.onclick = function() {
+startBtn.onclick = () => {
     onRandomTmr = setInterval(() => {
         randomUsersRow();
         tblTbody.innerHTML = '';
         iterateUsersToTable();
     }, 1000);
 }
+stopBtn.onclick = () => {
+    if(onRandomTmr) clearInterval(onRandomTmr);
+}
 
+// HELPERS
 function shuffleArray(array) {
     let currentIndex = array.length,
         randomIndex;
