@@ -83,7 +83,12 @@ startBtn.onclick = () => {
         iterateUsersToTable();
     }
 
+    // run random at first trigger
     _runRandom();
+
+    // fixed bug on double event
+    if(onRandomTmr) clearInterval(onRandomTmr);
+
     onRandomTmr = setInterval(() => {
         _runRandom();
     }, 1000);
